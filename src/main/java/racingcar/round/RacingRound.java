@@ -35,6 +35,7 @@ public class RacingRound {
     }
 
     public boolean possibleRoundStart() {
+
         return MIN_ROUND_NUMBER <= this.round--;
     }
 
@@ -44,6 +45,7 @@ public class RacingRound {
             car.move(movement);
             racingResults.add(result(car));
         }
+
         return racingResults;
     }
 }
