@@ -14,7 +14,7 @@ public class GameWinner {
 
     public List<WinnerResult> selectWinner(List<Car> cars) {
         List<WinnerResult> winnerResults = new LinkedList<>();
-        Collections.sort(cars);
+        Collections.sort(cars, Collections.reverseOrder());
         CarPosition winnerPosition = cars.get(0).getPosition();
         for (Car car : cars) {
             CarPosition carPosition = car.getPosition();
