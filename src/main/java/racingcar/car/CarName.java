@@ -5,7 +5,7 @@ import org.junit.platform.commons.util.StringUtils;
 public class CarName {
 
     private static final int MAX_NAME_LENGTH = 5;
-    private String name;
+    private final String name;
 
     public CarName(String name) {
         validate(name);
@@ -19,5 +19,9 @@ public class CarName {
         if (name.length() > MAX_NAME_LENGTH) {
             throw new IllegalArgumentException(CarErrorStatus.NAME_OVER_LENGTH.printMessage());
         }
+    }
+
+    public String getName() {
+        return this.name;
     }
 }
