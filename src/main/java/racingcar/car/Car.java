@@ -2,7 +2,7 @@ package racingcar.car;
 
 import racingcar.move.Movement;
 
-public class Car {
+public class Car implements Comparable {
 
     private final CarName carName;
     private final CarPosition position;
@@ -22,5 +22,13 @@ public class Car {
 
     public void move(Movement movement) {
         this.position.calculatePosition(movement);
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Car otherCar = (Car) o;
+        CarPosition otherCarPosition = otherCar.getPosition();
+        CarPosition carPosition = this.position;
+        return Integer.compare(carPosition.getPosition(), otherCarPosition.getPosition());
     }
 }
