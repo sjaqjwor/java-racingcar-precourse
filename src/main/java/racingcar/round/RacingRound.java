@@ -36,7 +36,7 @@ public class RacingRound {
 
     public boolean possibleRoundStart() {
 
-        return MIN_ROUND_NUMBER <= this.round--;
+        return MIN_ROUND_NUMBER <= --this.round;
     }
 
     public List<RacingResult> start(List<Car> cars, Movement movement) {
