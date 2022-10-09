@@ -27,18 +27,23 @@ public class RacingRound {
         }
     }
 
-    public List<RacingResult> result(List<Car> cars, Movement movement) {
-        List<RacingResult> result = new LinkedList<>();
-        for (Car car : cars) {
-            car.move(movement);
-            CarName name = car.getCarName();
-            CarPosition position = car.getPosition();
-            result.add(new RacingResult(name.getName(), position.getPosition()));
-        }
-        return result;
+    private RacingResult result(Car car) {
+        CarName name = car.getCarName();
+        CarPosition position = car.getPosition();
+
+        return new RacingResult(name.getName(), position.getPosition());
     }
 
     public boolean possibleRoundStart() {
         return MIN_ROUND_NUMBER <= this.round--;
+    }
+
+    public List<RacingResult> start(List<Car> cars, Movement movement) {
+        List<RacingResult> racingResults = new LinkedList<>();
+        for (Car car : cars) {
+            car.move(movement);
+            racingResults.add(result(car));
+        }
+        return racingResults;
     }
 }

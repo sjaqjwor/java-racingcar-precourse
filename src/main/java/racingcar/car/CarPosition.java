@@ -2,7 +2,7 @@ package racingcar.car;
 
 import racingcar.move.Movement;
 
-public class CarPosition implements Position {
+public class CarPosition {
     private int position;
 
     public CarPosition() {

@@ -40,7 +40,7 @@ public class RacingRoundTest {
         Car car = new Car("java");
         RacingRound racingRound = new RacingRound("1");
         Movement movement = initMovement(true);
-        List<RacingResult> racingResults = racingRound.result(Arrays.asList(car), movement);
+        List<RacingResult> racingResults = racingRound.start(Arrays.asList(car), movement);
         for (RacingResult result : racingResults) {
             assertThat(result.getName()).isEqualTo(car.getCarName().getName());
             assertThat(result.getPosition()).isEqualTo(car.getPosition().getPosition());
